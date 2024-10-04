@@ -71,5 +71,11 @@ class LineItUpIcons {
 
   IconData get timer => Icons.access_time_rounded;
 
+  IconData get heart => Icons.favorite_border;
+
+  IconData get heartFilled => Icons.favorite;
+
+  IconData get locationOff => Icons.bolt;
+
 //no delivery icon
 }

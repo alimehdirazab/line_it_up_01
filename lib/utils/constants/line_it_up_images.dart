@@ -31,4 +31,15 @@ class LineItUpImages {
   static const String popularSpot1 = 'assets/images/popular_spot1.png';
   static const String popularSpot2 = 'assets/images/popular_spot2.png';
   static const String popularSpot3 = 'assets/images/popular_spot3.png';
+  static const String apple = 'assets/images/apple.png';
+  static const String blackPlums = 'assets/images/black_plums.png';
+  static const String peach = 'assets/images/peach.png';
+  static const String banana = 'assets/images/banana.png';
+  static const String cheerios = 'assets/images/cheerios.png';
+  static const String generalMillsGolden =
+      'assets/images/general_mills_golden.png';
+  static const String trixCornPuff = 'assets/images/trix_corn_puff.png';
+  static const String farmRich = 'assets/images/form_rich.png';
+  static const String wegmans = 'assets/images/wegmans.png';
+  static const String feelFood = 'assets/images/feel_good.png';
 }

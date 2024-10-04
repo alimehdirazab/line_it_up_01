@@ -11,3 +11,5 @@ part 'user_home_page.dart';
 part 'user_search_some_where_else_page.dart';
 part 'user_search_page.dart';
 part 'user_store_page.dart';
+part 'user_product_details_page.dart';
+part 'user_cart_page.dart';

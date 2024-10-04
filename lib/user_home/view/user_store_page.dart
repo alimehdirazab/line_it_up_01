@@ -139,26 +139,166 @@ class _UserStoreViewState extends State<_UserStoreView>
               );
             },
           ),
-          SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: Column(
-                children: [
-                  const SizedBox(height: 24),
-                  Text(
-                    'Fresh fruits',
-                    style: LineItUpTextTheme().body.copyWith(
-                          fontWeight: FontWeight.w600,
-                        ),
-                  ),
-                  const SizedBox(height: 8),
-                  
-                ],
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 24),
+                    Text(
+                      'Fresh fruits',
+                      style: LineItUpTextTheme().body.copyWith(
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
+                    const SizedBox(height: 8),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          ProductCard(
+                            onTap: () {
+                              context.pushPage(const UserProductDetailsPage());
+                            },
+                            productImage: LineItUpImages.blackPlums,
+                            $price: '1',
+                            $productName: 'Black Plums',
+                            productId: 1,
+                          ),
+                          const SizedBox(width: 8),
+                          const ProductCard(
+                            productImage: LineItUpImages.peach,
+                            $price: '1',
+                            $productName: 'Peach',
+                            productId: 2,
+                          ),
+                          const SizedBox(width: 8),
+                          const ProductCard(
+                            productImage: LineItUpImages.apple,
+                            $price: '1',
+                            $productName: 'Apple',
+                            productId: 3,
+                          ),
+                          const SizedBox(width: 8),
+                          const ProductCard(
+                            productImage: LineItUpImages.banana,
+                            $price: '1',
+                            $productName: 'Banana',
+                            productId: 4,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    Text(
+                      'Breakfast',
+                      style: LineItUpTextTheme().body.copyWith(
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
+                    const SizedBox(height: 8),
+                    const SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          ProductCard(
+                            productImage: LineItUpImages.generalMillsGolden,
+                            $price: '6.99',
+                            $productName:
+                                'General Mills Golden Grahams Cereal, Retro',
+                            weight: '12 oz',
+                            productId: 5,
+                          ),
+                          SizedBox(width: 8),
+                          ProductCard(
+                            productImage: LineItUpImages.trixCornPuff,
+                            $price: '6.99',
+                            $productName: 'Trix Corn Puff, 6 Fruity Shapes',
+                            weight: '10 oz',
+                            productId: 6,
+                          ),
+                          SizedBox(width: 8),
+                          ProductCard(
+                            productImage: LineItUpImages.cheerios,
+                            $price: '5.99',
+                            $productName:
+                                'Cheerios Cereal, Gluten Free, Large Size',
+                            weight: '12 oz',
+                            productId: 7,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    Text(
+                      'Frozen snacks',
+                      style: LineItUpTextTheme().body.copyWith(
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
+                    const SizedBox(height: 8),
+                    const SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          ProductCard(
+                            productImage: LineItUpImages.farmRich,
+                            $price: '9.19',
+                            $productName:
+                                'Farm Rich Mozzarella Sticks, Breaded',
+                            weight: '22 oz',
+                            productId: 8,
+                          ),
+                          SizedBox(width: 8),
+                          ProductCard(
+                            productImage: LineItUpImages.wegmans,
+                            $price: '6.99',
+                            $productName: 'Wegmans Crinkle Cut Potatos ',
+                            weight: '32 oz',
+                            productId: 9,
+                          ),
+                          SizedBox(width: 8),
+                          ProductCard(
+                            productImage: LineItUpImages.feelFood,
+                            $price: '5.99',
+                            $productName:
+                                'Feel Good Food Mac & Cheese, Bites Three Cheese',
+                            weight: '8 oz',
+                            productId: 10,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           )
         ],
       ),
+      floatingActionButton: BlocBuilder<UserHomeCubit, UserHomeState>(
+        buildWhen: (previous, current) =>
+            previous.cartItems != current.cartItems,
+        builder: (context, state) {
+          // Calculate total cart item count
+          final totalCartCount = state.cartItems.values
+              .fold(0, (sum, itemCount) => sum + itemCount);
+
+          return CustomElevatedButton(
+            width: context.mWidth * 0.43,
+            hasIcon: true,
+            icon: LineItUpIcons().cart,
+            title:
+                '$totalCartCount  ${translate(context, 'view_cart')}', // Display total count
+            onTap: () {
+              //context.pushPage(const UserCartPage());
+            },
+          );
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

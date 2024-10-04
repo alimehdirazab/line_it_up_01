@@ -216,5 +216,10 @@
     "recent_searches":"Recent searches",
     "recommended_for_you":"Recommended for you",
     "notifications":"Notifications",
-    "yesterday":"Yesterday"
+    "yesterday":"Yesterday",
+    "view_cart":"View Cart",
+    "about":"About",
+    "each":"each",
+    "product_information":"Product Information",
+    "related_products":"Related Products"
 }
