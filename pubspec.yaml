@@ -1,0 +1,61 @@
+name: line_it_up
+description: An Ordering app.
+publish_to: 'none'
+version: 0.0.1+1
+
+environment:
+  sdk: '>=3.5.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  general_repository:
+    path: packages/general_repository
+  authentication_repository:
+    path: packages/authentication_repository
+  cache:
+    path: packages/cache
+  localization:
+    path: packages/localization
+  cupertino_icons: ^1.0.8
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.5
+  formz: ^0.7.0
+  country_code_picker: ^3.0.0
+  carousel_slider: ^5.0.0
+  google_maps_flutter: ^2.9.0
+  mobile_scanner: ^5.2.3
+  pretty_qr_code: ^3.3.0
+  flutter_stripe: ^11.1.0
+  fl_chart: ^0.69.0
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/categories/
+    - assets/l10n/
+ 
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/inter_18pt-Light.ttf
+          weight: 300
+        - asset: assets/fonts/inter_18pt-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/inter_18pt-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/inter_18pt-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/inter_18pt-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/inter_24pt-Bold.ttf
+          weight: 700
