@@ -135,17 +135,26 @@ class _UserCartViewState extends State<_UserCartView>
                           ],
                         ),
                         const SizedBox(height: 2),
-                        Row(
-                          children: [
-                            Icon(LineItUpIcons().flash),
-                            const SizedBox(width: 4),
-                            Text('Delivery by 7:59pm',
-                                style: LineItUpTextTheme().body.copyWith(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400,
-                                      color: LineItUpColorTheme().primary,
-                                    )),
-                          ],
+                        BlocBuilder<UserHomeCubit, UserHomeState>(
+                          builder: (context, state) {
+                            return Row(
+                              children: [
+                                state.selectedTab == TabOption.delivery
+                                    ? Icon(LineItUpIcons().flash)
+                                    : const SizedBox(),
+                                const SizedBox(width: 4),
+                                Text(
+                                    state.selectedTab == TabOption.delivery
+                                        ? 'Delivery by 7:59pm'
+                                        : 'Ready by 7:59pm',
+                                    style: LineItUpTextTheme().body.copyWith(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          color: LineItUpColorTheme().primary,
+                                        )),
+                              ],
+                            );
+                          },
                         ),
                         const SizedBox(height: 4),
                         Text('Food for health . California',
@@ -261,24 +270,40 @@ class _UserCartViewState extends State<_UserCartView>
                           ],
                         ),
                         const SizedBox(height: 12),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Delivery charges',
-                              style: LineItUpTextTheme().body.copyWith(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                            ),
-                            Text('\$0.77',
-                                style: LineItUpTextTheme().body.copyWith(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                    )),
-                          ],
+                        BlocBuilder<UserHomeCubit, UserHomeState>(
+                          builder: (context, state) {
+                            return state.selectedTab == TabOption.delivery
+                                ? Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Delivery charges',
+                                        style:
+                                            LineItUpTextTheme().body.copyWith(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                      ),
+                                      Text('\$0.77',
+                                          style:
+                                              LineItUpTextTheme().body.copyWith(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.w600,
+                                                  )),
+                                    ],
+                                  )
+                                : const SizedBox();
+                          },
                         ),
-                        const SizedBox(height: 12),
+                        BlocBuilder<UserHomeCubit, UserHomeState>(
+                          builder: (context, state) {
+                            if (state.selectedTab == TabOption.delivery) {
+                              return const SizedBox(height: 12);
+                            }
+                            return const SizedBox(height: 0);
+                          },
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -290,6 +315,24 @@ class _UserCartViewState extends State<_UserCartView>
                                   ),
                             ),
                             Text('\$0.11',
+                                style: LineItUpTextTheme().body.copyWith(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                    )),
+                          ],
+                        ),
+                        const SizedBox(height: 12),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Platform fee',
+                              style: LineItUpTextTheme().body.copyWith(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                            ),
+                            Text('\$1.11',
                                 style: LineItUpTextTheme().body.copyWith(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w600,
@@ -328,10 +371,22 @@ class _UserCartViewState extends State<_UserCartView>
               ],
             ),
             const SizedBox(height: 24),
-            CustomElevatedButton(
-                width: double.infinity,
-                title: 'Confirm payment & address',
-                onTap: () {})
+            BlocBuilder<UserHomeCubit, UserHomeState>(
+              builder: (context, state) {
+                return CustomElevatedButton(
+                    width: double.infinity,
+                    title: 'Confirm payment & address',
+                    onTap: () {
+                      if (state.selectedTab == TabOption.delivery) {
+                        context.pushPage(const UserAddressAndPaymentPage());
+                        return;
+                      } else {
+                        context
+                            .pushPage(const UserPickupAddressAndPaymentPage());
+                      }
+                    });
+              },
+            )
           ],
         ),
       ),

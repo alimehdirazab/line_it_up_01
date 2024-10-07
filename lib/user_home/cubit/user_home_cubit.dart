@@ -22,4 +22,13 @@ class UserHomeCubit extends Cubit<UserHomeState> {
 
     emit(state.copyWith(cartItems: updatedCartItems));
   }
+
+  // Method to select a tip chip
+  void selectTipChip(int selectedTipChipIndex) {
+    emit(state.copyWith(selectedTipChipIndex: selectedTipChipIndex));
+  }
+
+  void selectDayChip(int selectedDayChipIndex) {
+    emit(state.copyWith(selectedDayChipIndex: selectedDayChipIndex));
+  }
 }

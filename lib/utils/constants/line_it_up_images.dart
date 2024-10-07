@@ -42,4 +42,5 @@ class LineItUpImages {
   static const String farmRich = 'assets/images/form_rich.png';
   static const String wegmans = 'assets/images/wegmans.png';
   static const String feelFood = 'assets/images/feel_good.png';
+  static const String locationPin = 'assets/images/location_pin.png';
 }

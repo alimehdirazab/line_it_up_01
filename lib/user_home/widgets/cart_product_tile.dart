@@ -50,7 +50,7 @@ class CartProductTile extends StatelessWidget {
           ],
         ),
         AddRemoveCartButton(
-          productId: 1111,
+          productId: 1,
           backgroundColor: LineItUpColorTheme().grey20,
           iconColor: LineItUpColorTheme().black,
           textColor: LineItUpColorTheme().black,

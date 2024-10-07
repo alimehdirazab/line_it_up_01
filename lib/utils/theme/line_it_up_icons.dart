@@ -77,5 +77,7 @@ class LineItUpIcons {
 
   IconData get locationOff => Icons.bolt;
 
+  IconData get circle => Icons.circle_outlined;
+
 //no delivery icon
 }

@@ -10,7 +10,7 @@ class UserSearchSomeWhereElsePage extends StatelessWidget {
 }
 
 class _UserSearchSomeWhereElseView extends StatelessWidget {
-  const _UserSearchSomeWhereElseView({super.key});
+  const _UserSearchSomeWhereElseView();
 
   @override
   Widget build(BuildContext context) {
@@ -73,8 +73,12 @@ class _UserSearchSomeWhereElseView extends StatelessWidget {
                   zoomControlsEnabled: false,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 40),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
                   child: CustomElevatedButton(
+                      onTap: () {
+                        context.popPage();
+                      },
                       width: double.infinity,
                       title: translate(context, 'confirm')),
                 ),
