@@ -10,3 +10,4 @@ part 'popular_spots_card.dart';
 part 'product_card.dart';
 part 'add_remove_cart_button.dart';
 part 'cart_product_tile.dart';
+part 'add_to_cart_card.dart';

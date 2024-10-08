@@ -25,6 +25,8 @@ class LineItUpIcons {
 
   IconData get cart => Icons.shopping_cart;
 
+  IconData get cart1 => Icons.shopping_bag_outlined;
+
   IconData get flash => Icons.flash_on_outlined;
 
   IconData get edit => Icons.edit_outlined;
@@ -78,6 +80,12 @@ class LineItUpIcons {
   IconData get locationOff => Icons.bolt;
 
   IconData get circle => Icons.circle_outlined;
+
+  IconData get browse => Icons.grid_view_sharp;
+
+  IconData get hail => Icons.hail;
+
+  IconData get remove => Icons.remove;
 
 //no delivery icon
 }

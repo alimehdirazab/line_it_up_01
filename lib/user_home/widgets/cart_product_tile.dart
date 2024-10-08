@@ -54,6 +54,9 @@ class CartProductTile extends StatelessWidget {
           backgroundColor: LineItUpColorTheme().grey20,
           iconColor: LineItUpColorTheme().black,
           textColor: LineItUpColorTheme().black,
+          cartCountt: 1,
+          width: context.mWidth * 0.35,
+          height: 44,
         ),
       ],
     );

@@ -10,6 +10,7 @@ class UserHomeCubit extends Cubit<UserHomeState> {
     emit(state.copyWith(selectedTab: tab));
   }
 
+
   void updateCartItemCount(int productId, int count) {
     // Ensure that the count doesn't go below zero
     final updatedCartItems = Map<int, int>.from(state.cartItems);
@@ -30,5 +31,9 @@ class UserHomeCubit extends Cubit<UserHomeState> {
 
   void selectDayChip(int selectedDayChipIndex) {
     emit(state.copyWith(selectedDayChipIndex: selectedDayChipIndex));
+  }
+
+  void changeCategory(Category category) {
+    emit(state.copyWith(selectedCategory: category));
   }
 }

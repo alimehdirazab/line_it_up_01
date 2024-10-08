@@ -147,6 +147,120 @@ class _UserStoreViewState extends State<_UserStoreView>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 24),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          ShopCategoryCard(
+                            onTap: () {
+                              context.pushPage(
+                                  const UserSelectedCategoryProductsPage());
+                            },
+                            categoryText: 'Dairy Products',
+                            categoryImage: LineItUpImages.dairy,
+                            isSelected: true,
+                          ),
+                          const SizedBox(width: 8),
+                          const ShopCategoryCard(
+                            categoryText: 'Meat & Seafood',
+                            categoryImage: LineItUpImages.proteins,
+                            isSelected: true,
+                          ),
+                          const SizedBox(width: 8),
+                          const ShopCategoryCard(
+                            categoryText: 'Beverages',
+                            categoryImage: LineItUpImages.softDrinks,
+                            isSelected: true,
+                          ),
+                          const SizedBox(width: 8),
+                          const ShopCategoryCard(
+                            categoryText: 'Bakery & Breakfast',
+                            categoryImage: LineItUpImages.bread,
+                            isSelected: true,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          ShopCategoryCard(
+                            onTap: () {},
+                            categoryText: 'Everyday Grocery',
+                            categoryImage: LineItUpImages.basket,
+                            isSelected: true,
+                          ),
+                          const SizedBox(width: 8),
+                          const ShopCategoryCard(
+                            categoryText: 'Cooking Oil',
+                            categoryImage: LineItUpImages.oil,
+                            isSelected: true,
+                          ),
+                          const SizedBox(width: 8),
+                          const ShopCategoryCard(
+                            categoryText: 'Noodles & Pasta',
+                            categoryImage: LineItUpImages.food,
+                            isSelected: true,
+                          ),
+                          const SizedBox(width: 8),
+                          const ShopCategoryCard(
+                            categoryText: 'Spices & Dressings',
+                            categoryImage: LineItUpImages.spice,
+                            isSelected: true,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          ShopCategoryCard(
+                            onTap: () {},
+                            categoryText: 'Tea & Coffee',
+                            categoryImage: LineItUpImages.hotCup,
+                            isSelected: true,
+                          ),
+                          const SizedBox(width: 8),
+                          const ShopCategoryCard(
+                            categoryText: 'Snacks',
+                            categoryImage: LineItUpImages.candies,
+                            isSelected: true,
+                          ),
+                          const SizedBox(width: 8),
+                          const ShopCategoryCard(
+                            categoryText: 'Chocolate & Dessert',
+                            categoryImage: LineItUpImages.chocolateCake,
+                            isSelected: true,
+                          ),
+                          const SizedBox(width: 8),
+                          const ShopCategoryCard(
+                            categoryText: 'Personal Care',
+                            categoryImage: LineItUpImages.personalCare,
+                            isSelected: true,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(translate(context, 'view_all_categories'),
+                            style: LineItUpTextTheme().body.copyWith(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                )),
+                        Icon(
+                          LineItUpIcons().downArrow,
+                          color: LineItUpColorTheme().black,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 24),
                     Text(
                       'Fresh fruits',
                       style: LineItUpTextTheme().body.copyWith(

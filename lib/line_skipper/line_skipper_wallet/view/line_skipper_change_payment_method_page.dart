@@ -1,16 +1,19 @@
 part of 'view.dart';
 
 class LineSkipperChangePaymentMethodPage extends StatelessWidget {
-  const LineSkipperChangePaymentMethodPage({super.key});
+  final bool userProfile;
+  const LineSkipperChangePaymentMethodPage(
+      {super.key, this.userProfile = false});
 
   @override
   Widget build(BuildContext context) {
-    return const LineSkipperChangePaymentMethodView();
+    return _LineSkipperChangePaymentMethodView(userProfile);
   }
 }
 
-class LineSkipperChangePaymentMethodView extends StatelessWidget {
-  const LineSkipperChangePaymentMethodView({super.key});
+class _LineSkipperChangePaymentMethodView extends StatelessWidget {
+  final bool userProfile;
+  const _LineSkipperChangePaymentMethodView(this.userProfile);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,11 @@ class LineSkipperChangePaymentMethodView extends StatelessWidget {
         ),
         leading: IconButton(
             onPressed: () {
-              context.pushPage(const LineSkipperRootPage());
+              if (userProfile) {
+                context.pushPage(const RootPage());
+              } else {
+                context.pushPage(const LineSkipperRootPage());
+              }
             },
             icon: Icon(LineItUpIcons().cross)),
         centerTitle: true,

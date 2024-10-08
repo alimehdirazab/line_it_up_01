@@ -26,20 +26,55 @@ class LineSkipperView extends StatelessWidget {
           style: LineItUpTextTheme().body,
         ),
         centerTitle: true,
+        automaticallyImplyLeading: false,
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: context.mWidth * 0.04),
-            child: CircleAvatar(
-              backgroundColor: LineItUpColorTheme().grey,
-              child: IconButton(
-                icon: Icon(
-                  LineItUpIcons().notification,
-                  color: LineItUpColorTheme().white,
-                ),
-                onPressed: () {},
-              ),
-            ),
-          ),
+              padding: EdgeInsets.only(right: context.mWidth * 0.04),
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      context.pushPage(const UserAddToCartPage());
+                    },
+                    child: Badge(
+                      label: Text(
+                        '2',
+                        style: LineItUpTextTheme().body.copyWith(
+                            color: LineItUpColorTheme().white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      backgroundColor: LineItUpColorTheme().primary,
+                      child: Icon(
+                        LineItUpIcons().cart1,
+                        color: LineItUpColorTheme().black,
+                        size: 24,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                  GestureDetector(
+                    onTap: () {
+                      context.pushPage(const NotificationPage());
+                    },
+                    child: Badge(
+                      label: Text(
+                        '1',
+                        style: LineItUpTextTheme().body.copyWith(
+                            color: LineItUpColorTheme().white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      backgroundColor: LineItUpColorTheme().primary,
+                      child: Icon(
+                        LineItUpIcons().notification,
+                        color: LineItUpColorTheme().black,
+                        size: 24,
+                      ),
+                    ),
+                  ),
+                ],
+              )),
         ],
       ),
       body: Padding(
@@ -87,7 +122,7 @@ class LineSkipperView extends StatelessWidget {
                                         Catergory.grocery,
                                       );
                                 },
-                                categoryText: translate(context, 'grocery'),
+                                categoryText: 'Grocery',
                                 categoryImage: LineItUpImages.grocery,
                                 isSelected:
                                     state.selectedCategory == Catergory.grocery,
@@ -100,7 +135,7 @@ class LineSkipperView extends StatelessWidget {
                                         Catergory.fastFood,
                                       );
                                 },
-                                categoryText: translate(context, 'fast_food'),
+                                categoryText: 'Fast Food',
                                 categoryImage: LineItUpImages.fastFood,
                                 isSelected: state.selectedCategory ==
                                     Catergory.fastFood,
@@ -113,7 +148,7 @@ class LineSkipperView extends StatelessWidget {
                                         Catergory.coffee,
                                       );
                                 },
-                                categoryText: translate(context, 'coffee'),
+                                categoryText: 'Coffee',
                                 categoryImage: LineItUpImages.coffee,
                                 isSelected:
                                     state.selectedCategory == Catergory.coffee,
@@ -126,10 +161,49 @@ class LineSkipperView extends StatelessWidget {
                                         Catergory.pizza,
                                       );
                                 },
-                                categoryText: translate(context, 'pizza'),
+                                categoryText: 'Pizza',
                                 categoryImage: LineItUpImages.pizza,
                                 isSelected:
                                     state.selectedCategory == Catergory.pizza,
+                              ),
+                              CategoryCard(
+                                onTap: () {
+                                  context
+                                      .read<LineSkipperCubit>()
+                                      .selectCategory(
+                                        Catergory.chinese,
+                                      );
+                                },
+                                categoryText: 'Chinese',
+                                categoryImage: LineItUpImages.chinese,
+                                isSelected:
+                                    state.selectedCategory == Catergory.chinese,
+                              ),
+                              CategoryCard(
+                                onTap: () {
+                                  context
+                                      .read<LineSkipperCubit>()
+                                      .selectCategory(
+                                        Catergory.tacos,
+                                      );
+                                },
+                                categoryText: 'Tacos',
+                                categoryImage: LineItUpImages.tacos,
+                                isSelected:
+                                    state.selectedCategory == Catergory.tacos,
+                              ),
+                              CategoryCard(
+                                onTap: () {
+                                  context
+                                      .read<LineSkipperCubit>()
+                                      .selectCategory(
+                                        Catergory.thai,
+                                      );
+                                },
+                                categoryText: 'Thai',
+                                categoryImage: LineItUpImages.thai,
+                                isSelected:
+                                    state.selectedCategory == Catergory.thai,
                               ),
                             ],
                           ),
@@ -153,6 +227,7 @@ class LineSkipperView extends StatelessWidget {
                       image: LineItUpImages.store1,
                       name: 'Cost Less Food Company',
                       distance: '2.3 mi',
+                      showDotSepreator: false,
                     ),
                     const SizedBox(height: 20),
                     const StroreCard(
@@ -160,24 +235,28 @@ class LineSkipperView extends StatelessWidget {
                       name: 'Food for Health',
                       distance: '2.3 mi',
                       isClosed: true,
+                      showDotSepreator: false,
                     ),
                     const SizedBox(height: 20),
                     const StroreCard(
                       image: LineItUpImages.store3,
                       name: 'Bristol Farms',
                       distance: '2.3 mi',
+                      showDotSepreator: false,
                     ),
                     const SizedBox(height: 20),
                     const StroreCard(
                       image: LineItUpImages.store4,
                       name: 'Pavilions',
                       distance: '2.3 mi',
+                      showDotSepreator: false,
                     ),
                     const SizedBox(height: 20),
                     const StroreCard(
                       image: LineItUpImages.store5,
                       name: 'Food for Health',
                       distance: '2.3 mi',
+                      showDotSepreator: false,
                     ),
                   ],
                 ),

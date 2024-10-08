@@ -94,7 +94,7 @@ class AuthenticationRepository {
     }
   }
 
-  Future<void> refresh() async {
+  Future<String> refresh() async {
     String encodedBody = jsonEncode({"refresh": currentUser.refresh});
     final header = <String, String>{
       "Content-Type": "application/json",
@@ -118,6 +118,7 @@ class AuthenticationRepository {
       userAuth.add(UserAuthentication.empty);
       throw LogInFailure(e.toString());
     }
+    return '';
   }
 
   Future<void> register(

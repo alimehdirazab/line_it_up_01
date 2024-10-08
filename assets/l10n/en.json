@@ -245,7 +245,20 @@
     "schedule_pickup_timings":"Schedule pickup timings",
     "schedule_pickup":"Schedule pickup",
     "schedule":"Schedule",
-    "scheduled_order":"Scheduled order"
-    
-    
+    "scheduled_order":"Scheduled order",
+    "free":"Free",
+    "view_all_categories":"View all categories",
+    "browse":"Browse",
+    "setting":"Setting",
+    "completed" : "Completed",
+    "addresses": "Addresses",
+    "add_or_remove_a_delivery_address":"Add or remove a delivery address",
+    "add_new_addresses" : "Add new addresses",
+    "saved_products": "Saved products",
+    "saved_payment_method" : "Saved payment method",
+    "saved_address" : "Saved address",
+    "heart_the_favourite": "Heart the favorites",
+    "in_progress": "In-progress",
+    "manage_your_personal_information": "Manage your personal information",
+    "add_to_cart": "Add to cart"
 }

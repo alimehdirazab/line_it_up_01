@@ -29,7 +29,7 @@ class CategoryCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(categoryImage),
+            Image.asset(categoryImage, width: 40, height: 40),
             const SizedBox(height: 2),
             Text(
               categoryText,

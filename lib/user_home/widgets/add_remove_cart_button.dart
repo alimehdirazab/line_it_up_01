@@ -5,12 +5,18 @@ class AddRemoveCartButton extends StatelessWidget {
   final Color? backgroundColor;
   final Color? iconColor;
   final Color? textColor;
+  final int cartCountt;
+  final double width;
+  final double height;
   const AddRemoveCartButton({
     super.key,
     required this.productId,
     this.backgroundColor,
     this.iconColor,
     this.textColor,
+    this.cartCountt = 0,
+    this.width = 88,
+    this.height = 40,
   });
 
   @override
@@ -20,7 +26,7 @@ class AddRemoveCartButton extends StatelessWidget {
             previous.cartItems != current.cartItems,
         builder: (context, state) {
           // Get the cart count for the specific product
-          final cartCount = state.cartItems[productId] ?? 0;
+          final cartCount = state.cartItems[productId] ?? cartCountt;
 
           return cartCount == 0
               ? CircleButton(
@@ -34,8 +40,8 @@ class AddRemoveCartButton extends StatelessWidget {
                   iconColor: iconColor ?? LineItUpColorTheme().white,
                 )
               : Container(
-                  width: 88,
-                  height: 40,
+                  width: width,
+                  height: height,
                   decoration: BoxDecoration(
                     color: backgroundColor ?? LineItUpColorTheme().primary,
                     borderRadius: BorderRadius.circular(54),
@@ -51,7 +57,9 @@ class AddRemoveCartButton extends StatelessWidget {
                               .updateCartItemCount(productId, cartCount - 1);
                         },
                         child: Icon(
-                          LineItUpIcons().delete1,
+                          cartCount > 1
+                              ? LineItUpIcons().remove
+                              : LineItUpIcons().delete1,
                           size: 20,
                           color: iconColor ?? LineItUpColorTheme().white,
                         ),

@@ -11,6 +11,26 @@ class LineItUpImages {
   static const String fastFood = 'assets/images/categories/fast_food.png';
   static const String grocery = 'assets/images/categories/grocery.png';
   static const String pizza = 'assets/images/categories/pizza.png';
+  static const String chinese = 'assets/images/categories/chinese.png';
+  static const String tacos = 'assets/images/categories/tacos.png';
+  static const String thai = 'assets/images/categories/thai.png';
+  static const String butchery = 'assets/images/categories/butchery.png';
+  static const String convenience = 'assets/images/categories/convenience.png';
+  static const String healthcare = 'assets/images/categories/healthcare.png';
+  static const String basket = 'assets/images/categories/basket.png';
+  static const String bread = 'assets/images/categories/bread.png';
+  static const String candies = 'assets/images/categories/candies.png';
+  static const String chocolateCake =
+      'assets/images/categories/chocolate_cake.png';
+  static const String dairy = 'assets/images/categories/dairy.png';
+  static const String food = 'assets/images/categories/food.png';
+  static const String hotCup = 'assets/images/categories/hot_cup.png';
+  static const String oil = 'assets/images/categories/oil.png';
+  static const String personalCare =
+      'assets/images/categories/personal_care.png';
+  static const String proteins = 'assets/images/categories/proteins.png';
+  static const String softDrinks = 'assets/images/categories/soft_drink.png';
+  static const String spice = 'assets/images/categories/spice.png';
   static const String store1 = 'assets/images/store_1.png';
   static const String store2 = 'assets/images/store_2.png';
   static const String store3 = 'assets/images/store_3.png';
@@ -31,6 +51,7 @@ class LineItUpImages {
   static const String popularSpot1 = 'assets/images/popular_spot1.png';
   static const String popularSpot2 = 'assets/images/popular_spot2.png';
   static const String popularSpot3 = 'assets/images/popular_spot3.png';
+  static const String popularSpot4 = 'assets/images/popular_spot4.png';
   static const String apple = 'assets/images/apple.png';
   static const String blackPlums = 'assets/images/black_plums.png';
   static const String peach = 'assets/images/peach.png';
@@ -43,4 +64,18 @@ class LineItUpImages {
   static const String wegmans = 'assets/images/wegmans.png';
   static const String feelFood = 'assets/images/feel_good.png';
   static const String locationPin = 'assets/images/location_pin.png';
+  static const String egg10 = 'assets/images/egg10.png';
+  static const String egg30 = 'assets/images/egg30.png';
+  static const String yogurt1 = 'assets/images/yogurt1.png';
+  static const String yogurt2 = 'assets/images/yogurt2.png';
+  static const String cowMilk = 'assets/images/cow_milk.png';
+  static const String organicMilk = 'assets/images/organic_milk.png';
+  static const String chineseFood = 'assets/images/chinese.png';
+  static const String fastFoodItem = 'assets/images/fast_food.png';
+  static const String healthy = 'assets/images/healthy.png';
+  static const String indian = 'assets/images/indian.png';
+  static const String mexican = 'assets/images/mexican.png';
+  static const String pizzaItem = 'assets/images/pizza.png';
+  static const String sushi = 'assets/images/sushi.png';
+  static const String thaiItem = 'assets/images/thai.png';
 }

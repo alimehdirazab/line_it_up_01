@@ -6,6 +6,11 @@ class ProductCard extends StatelessWidget {
   final String $productName;
   final String? weight;
   final int productId;
+  final double width;
+  final double height;
+  final double imageWidth;
+  final double imageHeight;
+
   final Function()? onTap;
   const ProductCard({
     super.key,
@@ -14,14 +19,18 @@ class ProductCard extends StatelessWidget {
     required this.$productName,
     this.weight,
     required this.productId,
+    this.width = 140,
+    this.height = 215,
+    this.imageWidth = 96,
+    this.imageHeight = 80,
     this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 140,
-      height: 215,
+      width: width,
+      height: height,
       child: GestureDetector(
         onTap: onTap,
         child: Column(
@@ -31,13 +40,15 @@ class ProductCard extends StatelessWidget {
               alignment: Alignment.bottomRight,
               children: [
                 Container(
+                  width: double.infinity,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 22, vertical: 30),
                   decoration: BoxDecoration(
                     color: LineItUpColorTheme().grey20,
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Image.asset(productImage, width: 96, height: 80),
+                  child: Image.asset(productImage,
+                      width: imageWidth, height: imageHeight),
                 ),
                 Padding(
                     padding: const EdgeInsets.only(right: 4, bottom: 4),

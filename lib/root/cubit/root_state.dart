@@ -1,10 +1,10 @@
 part of 'root_cubit.dart';
 
-enum NavBarItem { home, delivery, lineskipper, orders, profile }
+enum NavBarItem { home, browse, lineskipper, orders, setting }
 
 class RootState extends Equatable {
   const RootState({
-    this.navBarItem = NavBarItem.lineskipper,
+    this.navBarItem = NavBarItem.home,
   });
 
   final NavBarItem navBarItem;

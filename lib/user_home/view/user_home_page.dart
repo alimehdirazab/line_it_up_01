@@ -94,15 +94,51 @@ class _UserHomeViewState extends State<_UserHomeView>
                           ),
                         ],
                       ),
-                      CircleButton(
-                        onPressed: () {
-                          context.pushPage(const NotificationPage());
-                        },
-                        icon: LineItUpIcons().notification,
-                        iconColor: LineItUpColorTheme().white,
-                        backgroundColor: LineItUpColorTheme().grey,
-                        radius: 20,
-                      ),
+                      Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              context.pushPage(const UserAddToCartPage());
+                            },
+                            child: Badge(
+                              label: Text(
+                                '2',
+                                style: LineItUpTextTheme().body.copyWith(
+                                    color: LineItUpColorTheme().white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              backgroundColor: LineItUpColorTheme().primary,
+                              child: Icon(
+                                LineItUpIcons().cart1,
+                                color: LineItUpColorTheme().black,
+                                size: 24,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 16),
+                          GestureDetector(
+                            onTap: () {
+                              context.pushPage(const NotificationPage());
+                            },
+                            child: Badge(
+                              label: Text(
+                                '1',
+                                style: LineItUpTextTheme().body.copyWith(
+                                    color: LineItUpColorTheme().white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              backgroundColor: LineItUpColorTheme().primary,
+                              child: Icon(
+                                LineItUpIcons().notification,
+                                color: LineItUpColorTheme().black,
+                                size: 24,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                   const SizedBox(height: 12),
@@ -195,27 +231,48 @@ class _UserHomeViewState extends State<_UserHomeView>
                           child: Row(
                             children: [
                               CategoryCard(
-                                onTap: () {},
-                                categoryText: translate(context, 'grocery'),
+                                onTap: () {
+                                  context.pushPage(
+                                      const UserStoresByCategoryPage());
+                                },
+                                categoryText: 'Grocery',
                                 categoryImage: LineItUpImages.grocery,
                               ),
                               const SizedBox(width: 16),
                               CategoryCard(
                                 onTap: () {},
-                                categoryText: translate(context, 'fast_food'),
+                                categoryText: 'Fast Food',
                                 categoryImage: LineItUpImages.fastFood,
                               ),
                               const SizedBox(width: 16),
                               CategoryCard(
                                 onTap: () {},
-                                categoryText: translate(context, 'coffee'),
+                                categoryText: 'Coffee',
                                 categoryImage: LineItUpImages.coffee,
                               ),
                               const SizedBox(width: 16),
                               CategoryCard(
                                 onTap: () {},
-                                categoryText: translate(context, 'pizza'),
+                                categoryText: 'Pizza',
                                 categoryImage: LineItUpImages.pizza,
+                              ),
+                              const SizedBox(width: 16),
+                              CategoryCard(
+                                onTap: () {},
+                                categoryText: 'Chinese',
+                                categoryImage: LineItUpImages.chinese,
+                              ),
+                              const SizedBox(width: 16),
+                              CategoryCard(
+                                onTap: () {},
+                                categoryText: 'Tacos',
+                                categoryImage: LineItUpImages.tacos,
+                              ),
+                              const SizedBox(width: 16),
+                              CategoryCard(
+                                onTap: () {},
+                                categoryText: 'Thai',
+                                categoryImage: LineItUpImages.thai,
                               ),
                             ],
                           ),
@@ -342,8 +399,8 @@ class _UserHomeViewState extends State<_UserHomeView>
                               ),
                               SizedBox(width: 8),
                               PopularSpotsCard(
-                                image: LineItUpImages.popularSpot1,
-                                spotName: 'Subway',
+                                image: LineItUpImages.popularSpot4,
+                                spotName: 'Texus Roadhouse',
                                 time: '30-45 min',
                               ),
                             ],
@@ -359,28 +416,43 @@ class _UserHomeViewState extends State<_UserHomeView>
                           scrollDirection: Axis.horizontal,
                           child: Row(
                             children: [
-                              CategoryCard(
+                              const SizedBox(width: 8),
+                              ShopCategoryCard(
+                                onTap: () {},
+                                categoryText: 'Convenience',
+                                categoryImage: LineItUpImages.convenience,
+                                isSelected: true,
+                              ),
+                              const SizedBox(width: 8),
+                              ShopCategoryCard(
+                                onTap: () {},
+                                categoryText: 'healthcare',
+                                categoryImage: LineItUpImages.healthcare,
+                                isSelected: true,
+                              ),
+                              const SizedBox(width: 8),
+                              ShopCategoryCard(
                                 onTap: () {},
                                 categoryText: 'Grocery',
                                 categoryImage: LineItUpImages.grocery,
                                 isSelected: true,
                               ),
                               const SizedBox(width: 8),
-                              CategoryCard(
+                              ShopCategoryCard(
                                 onTap: () {},
                                 categoryText: 'Fast Food',
                                 categoryImage: LineItUpImages.fastFood,
                                 isSelected: true,
                               ),
                               const SizedBox(width: 8),
-                              CategoryCard(
+                              ShopCategoryCard(
                                 onTap: () {},
-                                categoryText: 'Coffee',
-                                categoryImage: LineItUpImages.coffee,
+                                categoryText: 'Chinese',
+                                categoryImage: LineItUpImages.chinese,
                                 isSelected: true,
                               ),
                               const SizedBox(width: 8),
-                              CategoryCard(
+                              ShopCategoryCard(
                                 onTap: () {},
                                 categoryText: 'Pizza',
                                 categoryImage: LineItUpImages.pizza,

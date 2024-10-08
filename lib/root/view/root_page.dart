@@ -37,10 +37,10 @@ class _RootViewPages extends StatelessWidget {
           index: _buildPageIndex(state),
           children: const [
             UserHomePage(),
-            Placeholder(),
+            UserBrowsePage(),
             LineSkipperPage(),
-            Placeholder(),
-            Placeholder(),
+            UserOrderPage(),
+            UserProfilePage(),
           ],
         );
       },
@@ -51,13 +51,13 @@ class _RootViewPages extends StatelessWidget {
     switch (state.navBarItem) {
       case NavBarItem.home:
         return 0;
-      case NavBarItem.delivery:
+      case NavBarItem.browse:
         return 1;
       case NavBarItem.lineskipper:
         return 2;
       case NavBarItem.orders:
         return 3;
-      case NavBarItem.profile:
+      case NavBarItem.setting:
         return 4;
     }
   }
@@ -77,13 +77,13 @@ class _BottomNavBar extends StatelessWidget {
           onTapHome: () =>
               context.read<RootCubit>().getNavBarItem(NavBarItem.home),
           onTapDelivery: () =>
-              context.read<RootCubit>().getNavBarItem(NavBarItem.delivery),
+              context.read<RootCubit>().getNavBarItem(NavBarItem.browse),
           onTapLinSkipper: () =>
               context.read<RootCubit>().getNavBarItem(NavBarItem.lineskipper),
           onTapOrders: () =>
               context.read<RootCubit>().getNavBarItem(NavBarItem.orders),
           onTapProfile: () =>
-              context.read<RootCubit>().getNavBarItem(NavBarItem.profile),
+              context.read<RootCubit>().getNavBarItem(NavBarItem.setting),
         );
       },
     );

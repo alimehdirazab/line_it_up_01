@@ -1,4 +1,5 @@
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
@@ -25,3 +26,6 @@ part 'user_order_progress_page.dart';
 part 'user_order_completed_page.dart';
 part 'user_pickup_address_and_payment_page.dart';
 part 'user_placing_pickup_order_page.dart';
+part 'user_stores_by_category_page.dart';
+part 'user_selected_category_products_page.dart';
+part 'user_add_to_cart_page.dart';

@@ -21,6 +21,7 @@ class BottomNavBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(bottom: Platform.isIOS ? 16 : 0),
       decoration: BoxDecoration(
         color: LineItUpColorTheme().white,
         border: Border(
@@ -39,9 +40,9 @@ class BottomNavBarWidget extends StatelessWidget {
             onTap: onTapHome,
           ),
           _BottomNavBarItem(
-            icon: LineItUpIcons().delivery,
+            icon: LineItUpIcons().browse,
             isSelected: 1 == currentIndex,
-            label: translate(context, 'delivery'),
+            label: translate(context, 'browse'),
             onTap: onTapDelivery,
           ),
           _BottomNavBarItem(
@@ -59,7 +60,7 @@ class BottomNavBarWidget extends StatelessWidget {
           _BottomNavBarItem(
             icon: LineItUpIcons().profile,
             isSelected: 4 == currentIndex,
-            label: translate(context, 'profile'),
+            label: translate(context, 'setting'),
             onTap: onTapProfile,
           ),
         ],

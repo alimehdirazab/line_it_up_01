@@ -1,6 +1,16 @@
 part of 'line_skipper_cubit.dart';
 
-enum Catergory { grocery, fastFood, pharmacy, coffee, pizza, others }
+enum Catergory {
+  grocery,
+  fastFood,
+  pharmacy,
+  coffee,
+  pizza,
+  chinese,
+  tacos,
+  thai,
+  others
+}
 
 class LineSkipperState extends Equatable {
   final int selectedPriceChipIndex;

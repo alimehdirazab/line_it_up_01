@@ -17,6 +17,7 @@ class _UserOrderProgressView extends StatefulWidget {
 }
 
 class _UserOrderProgressViewState extends State<_UserOrderProgressView> {
+  Future<void>? _timer;
   @override
   void initState() {
     super.initState();
@@ -39,10 +40,17 @@ class _UserOrderProgressViewState extends State<_UserOrderProgressView> {
     });
 
     // Delay for 4 seconds before navigating to UserOrderCompletedPage
-    Future.delayed(const Duration(seconds: 4), () {
+    _timer = Future.delayed(const Duration(seconds: 4), () {
       // ignore: use_build_context_synchronously
       context.pushPage(const UserOrderCompletedPage());
     });
+  }
+
+  @override
+  void dispose() {
+    // Cancel the timer if the widget is disposed
+    _timer?.ignore(); // This will ignore the completion of the future
+    super.dispose();
   }
 
   @override
@@ -235,4 +243,3 @@ class _UserOrderProgressViewState extends State<_UserOrderProgressView> {
     );
   }
 }
-

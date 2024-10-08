@@ -18,16 +18,28 @@ class _UserOrderCompletedView extends StatefulWidget {
 }
 
 class _UserOrderCompletedViewState extends State<_UserOrderCompletedView> {
+  Future<void>? _timer;
   @override
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 4), () {
-      showModalBottomSheet(
-          // ignore: use_build_context_synchronously
+    // Store the future so we can cancel it in dispose
+    _timer = Future.delayed(const Duration(seconds: 4), () {
+      if (mounted) {
+        // Ensure the widget is still mounted before showing the modal
+        showModalBottomSheet(
           context: context,
-          builder: (context) => const _RatingBottomSheet());
+          builder: (context) => const _RatingBottomSheet(),
+        );
+      }
     });
+  }
+
+  @override
+  void dispose() {
+    // Cancel the timer if the widget is disposed
+    _timer?.ignore(); // This will ignore the completion of the future
+    super.dispose();
   }
 
   @override
