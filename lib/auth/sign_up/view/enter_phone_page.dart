@@ -82,12 +82,24 @@ class _EnterPhoneViewState extends State<EnterPhoneView> {
               style: LineItUpTextTheme().heading,
             ),
             SizedBox(height: context.mHeight * 0.04),
-            Text(
-              translate(context, 'phone_number'),
-              style: LineItUpTextTheme().body.copyWith(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w300,
-                  ),
+            Row(
+              children: [
+                Text(
+                  translate(context, 'phone_number'),
+                  style: LineItUpTextTheme().body.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                      ),
+                ),
+                Text(
+                  '*',
+                  style: LineItUpTextTheme().body.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                        color: LineItUpColorTheme().red,
+                      ),
+                ),
+              ],
             ),
             Row(
               children: [

@@ -98,12 +98,24 @@ class _OtpViewState extends State<OtpView> {
                   .copyWith(fontSize: 14, fontWeight: FontWeight.w300),
             ),
             SizedBox(height: context.mHeight * 0.04),
-            Text(
-              translate(context, 'otp'),
-              style: LineItUpTextTheme().body.copyWith(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w300,
-                  ),
+            Row(
+              children: [
+                Text(
+                  translate(context, 'otp'),
+                  style: LineItUpTextTheme().body.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                      ),
+                ),
+                Text(
+                  '*',
+                  style: LineItUpTextTheme().body.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                        color: LineItUpColorTheme().red,
+                      ),
+                ),
+              ],
             ),
             CustomTextField(
               controller: otpController,
@@ -123,6 +135,37 @@ class _OtpViewState extends State<OtpView> {
                           .copyWith(fontSize: 14, fontWeight: FontWeight.w600),
                     );
                   }),
+            ),
+            const SizedBox(height: 24),
+            BlocBuilder<SignUPCubit, SignUpState>(
+              buildWhen: (previous, current) =>
+                  previous.otpTimer != current.otpTimer,
+              builder: (context, state) {
+                if (state.otpTimer == 0) {
+                  return GestureDetector(
+                    onTap: () {
+                      context.read<SignUPCubit>().resendOtp();
+                    },
+                    child: Text(
+                      translate(context, 'resend_otp'),
+                      style: LineItUpTextTheme().body.copyWith(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w300,
+                            color: LineItUpColorTheme().primary,
+                          ),
+                    ),
+                  );
+                } else {
+                  return Text(
+                    translate(context, 'resend_otp'),
+                    style: LineItUpTextTheme().body.copyWith(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w300,
+                          color: LineItUpColorTheme().grey,
+                        ),
+                  );
+                }
+              },
             ),
             SizedBox(height: context.mHeight * 0.04),
             const Spacer(),

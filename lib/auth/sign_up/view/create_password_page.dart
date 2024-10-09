@@ -85,12 +85,24 @@ class CreatePasswordView extends StatelessWidget {
                   .copyWith(fontSize: 14, fontWeight: FontWeight.w300),
             ),
             SizedBox(height: context.mHeight * 0.04),
-            Text(
-              translate(context, 'enter_password'),
-              style: LineItUpTextTheme().body.copyWith(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w300,
-                  ),
+            Row(
+              children: [
+                Text(
+                  translate(context, 'enter_password'),
+                  style: LineItUpTextTheme().body.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                      ),
+                ),
+                Text(
+                  '*',
+                  style: LineItUpTextTheme().body.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                        color: LineItUpColorTheme().red,
+                      ),
+                ),
+              ],
             ),
             BlocBuilder<SignUPCubit, SignUpState>(
                 buildWhen: (previous, current) =>

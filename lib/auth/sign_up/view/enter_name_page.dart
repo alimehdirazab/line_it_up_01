@@ -75,12 +75,24 @@ class EnterNameView extends StatelessWidget {
               style: LineItUpTextTheme().heading,
             ),
             SizedBox(height: context.mHeight * 0.04),
-            Text(
-              translate(context, 'name'),
-              style: LineItUpTextTheme().body.copyWith(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w300,
-                  ),
+            Row(
+              children: [
+                Text(
+                  translate(context, 'name'),
+                  style: LineItUpTextTheme().body.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                      ),
+                ),
+                Text(
+                  '*',
+                  style: LineItUpTextTheme().body.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                        color: LineItUpColorTheme().red,
+                      ),
+                ),
+              ],
             ),
             const CustomTextField(
               hintText: 'Enter your full name',

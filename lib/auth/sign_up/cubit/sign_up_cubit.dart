@@ -23,6 +23,13 @@ class SignUPCubit extends Cubit<SignUpState> {
     });
   }
 
+  void resendOtp() {
+    emit(state.copyWith(
+      otpTimer: 60,
+    ));
+    startOtpTimer();
+  }
+
   void validateOtpLength(String otp) {
     emit(state.copyWith(
       isOtpLengthValid: otp.length == 6,

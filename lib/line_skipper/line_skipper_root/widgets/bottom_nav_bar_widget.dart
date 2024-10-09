@@ -17,6 +17,7 @@ class BottomNavBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(bottom: Platform.isIOS ? 16 : 0),
       decoration: BoxDecoration(
         color: LineItUpColorTheme().white,
         border: Border(

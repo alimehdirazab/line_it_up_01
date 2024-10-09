@@ -260,5 +260,6 @@
     "heart_the_favourite": "Heart the favorites",
     "in_progress": "In-progress",
     "manage_your_personal_information": "Manage your personal information",
-    "add_to_cart": "Add to cart"
+    "add_to_cart": "Add to cart",
+    "resend_otp": "Resend OTP"
 }
